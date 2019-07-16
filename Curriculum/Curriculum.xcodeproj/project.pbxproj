@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		36C5CD1622DE6E1100BFF1C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD1522DE6E1100BFF1C7 /* AppDelegate.swift */; };
-		36C5CD1822DE6E1100BFF1C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD1722DE6E1100BFF1C7 /* ViewController.swift */; };
 		36C5CD1B22DE6E1100BFF1C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CD1922DE6E1100BFF1C7 /* Main.storyboard */; };
 		36C5CD1D22DE6E1300BFF1C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CD1C22DE6E1300BFF1C7 /* Assets.xcassets */; };
 		36C5CD2022DE6E1300BFF1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CD1E22DE6E1300BFF1C7 /* LaunchScreen.storyboard */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		36C5CD1222DE6E1100BFF1C7 /* Curriculum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curriculum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C5CD1522DE6E1100BFF1C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36C5CD1722DE6E1100BFF1C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36C5CD1A22DE6E1100BFF1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36C5CD1C22DE6E1300BFF1C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36C5CD1F22DE6E1300BFF1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,6 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3608692C22DE7AE70088845B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3608692D22DE7AED0088845B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CD1C22DE6E1300BFF1C7 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		36C5CD0922DE6E1100BFF1C7 = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +124,14 @@
 		36C5CD1422DE6E1100BFF1C7 /* Curriculum */ = {
 			isa = PBXGroup;
 			children = (
-				36C5CD1C22DE6E1300BFF1C7 /* Assets.xcassets */,
+				3608692D22DE7AED0088845B /* Assets */,
+				3608692C22DE7AE70088845B /* Extensions */,
+				36C5CD4322DE759800BFF1C7 /* Model */,
+				36C5CD4422DE759F00BFF1C7 /* View */,
+				36C5CD4522DE75A900BFF1C7 /* Presenter */,
+				36C5CD4622DE785100BFF1C7 /* Controller */,
+				36C5CD4922DE78D500BFF1C7 /* Storyboards */,
 				36C5CD1522DE6E1100BFF1C7 /* AppDelegate.swift */,
-				36C5CD1722DE6E1100BFF1C7 /* ViewController.swift */,
-				36C5CD1922DE6E1100BFF1C7 /* Main.storyboard */,
-				36C5CD1E22DE6E1300BFF1C7 /* LaunchScreen.storyboard */,
 				36C5CD2122DE6E1300BFF1C7 /* Info.plist */,
 				C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */,
 				C0E2F8FC22DFC96C004170D1 /* Utils */,
@@ -438,6 +454,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -493,6 +510,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

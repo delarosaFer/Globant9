@@ -1,10 +1,3 @@
-//
-//  CurriculumTests.swift
-//  CurriculumTests
-//
-//  Created by Fernando De La Rosa Salas on 7/16/19.
-//
-
 import XCTest
 @testable import Curriculum
 

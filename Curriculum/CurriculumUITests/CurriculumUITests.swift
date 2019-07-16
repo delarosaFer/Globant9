@@ -1,10 +1,3 @@
-//
-//  CurriculumUITests.swift
-//  CurriculumUITests
-//
-//  Created by Fernando De La Rosa Salas on 7/16/19.
-//
-
 import XCTest
 
 class CurriculumUITests: XCTestCase {
