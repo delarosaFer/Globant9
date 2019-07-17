@@ -1,0 +1,2 @@
+// MARK: - Base URL to requests
+BASE_URL = https:/api.myjson.com/bins/

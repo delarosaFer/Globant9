@@ -9,7 +9,7 @@ struct Curriculum: Codable {
     let description: String
     let cellphone: String
     let email: String
-    let website: String
+    let website: String?
     let photoURL: String
     let jobList: [Job]
 }
