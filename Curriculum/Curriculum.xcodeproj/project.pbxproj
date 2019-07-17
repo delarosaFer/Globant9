@@ -14,6 +14,8 @@
 		36C5CD2022DE6E1300BFF1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CD1E22DE6E1300BFF1C7 /* LaunchScreen.storyboard */; };
 		36C5CD2B22DE6E1300BFF1C7 /* CurriculumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD2A22DE6E1300BFF1C7 /* CurriculumTests.swift */; };
 		36C5CD3622DE6E1300BFF1C7 /* CurriculumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD3522DE6E1300BFF1C7 /* CurriculumUITests.swift */; };
+		C0AB2AA922DE82FC00A752C6 /* CurriculumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB2AA822DE82FC00A752C6 /* CurriculumModel.swift */; };
+		C0AB2AAB22DE837D00A752C6 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB2AAA22DE837D00A752C6 /* JobModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		36C5CD3122DE6E1300BFF1C7 /* CurriculumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurriculumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C5CD3522DE6E1300BFF1C7 /* CurriculumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumUITests.swift; sourceTree = "<group>"; };
 		36C5CD3722DE6E1300BFF1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0AB2AA822DE82FC00A752C6 /* CurriculumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumModel.swift; sourceTree = "<group>"; };
+		C0AB2AAA22DE837D00A752C6 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				36C5CD1922DE6E1100BFF1C7 /* Main.storyboard */,
 				36C5CD1E22DE6E1300BFF1C7 /* LaunchScreen.storyboard */,
 				36C5CD2122DE6E1300BFF1C7 /* Info.plist */,
+				C0AB2AA722DE80AF00A752C6 /* Models */,
 			);
 			path = Curriculum;
 			sourceTree = "<group>";
@@ -123,6 +128,15 @@
 				36C5CD3722DE6E1300BFF1C7 /* Info.plist */,
 			);
 			path = CurriculumUITests;
+			sourceTree = "<group>";
+		};
+		C0AB2AA722DE80AF00A752C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB2AA822DE82FC00A752C6 /* CurriculumModel.swift */,
+				C0AB2AAA22DE837D00A752C6 /* JobModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AB2AA922DE82FC00A752C6 /* CurriculumModel.swift in Sources */,
+				C0AB2AAB22DE837D00A752C6 /* JobModel.swift in Sources */,
 				36C5CD1822DE6E1100BFF1C7 /* ViewController.swift in Sources */,
 				36C5CD1622DE6E1100BFF1C7 /* AppDelegate.swift in Sources */,
 			);
