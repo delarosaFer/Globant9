@@ -9,6 +9,4 @@ class HomeViewController: UIViewController {
     
         presenter?.delegate = self as? HomePresenterProtocol
     }
-    
-    
 }

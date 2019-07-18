@@ -9,3 +9,8 @@ enum Storyboard: String {
 enum ViewController: String {
     case home = "HomeViewController"
 }
+
+// MARK: - Strings for URLS
+enum URLS: String {
+    case keyBaseURL = "BASE_URL"
+}

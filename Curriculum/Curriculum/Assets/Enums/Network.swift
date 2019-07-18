@@ -6,10 +6,6 @@ enum AppConfiguration {
     }
 }
 
-enum urls: String {
-    case keyBaseURL = "BASE_URL"
-}
-
 enum RequestResult<T> {
     case success(T)
     case failure(Error)
