@@ -14,6 +14,13 @@
 		36C5CD2022DE6E1300BFF1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CD1E22DE6E1300BFF1C7 /* LaunchScreen.storyboard */; };
 		36C5CD2B22DE6E1300BFF1C7 /* CurriculumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD2A22DE6E1300BFF1C7 /* CurriculumTests.swift */; };
 		36C5CD3622DE6E1300BFF1C7 /* CurriculumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD3522DE6E1300BFF1C7 /* CurriculumUITests.swift */; };
+		C0AB2AA922DE82FC00A752C6 /* CurriculumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB2AA822DE82FC00A752C6 /* CurriculumModel.swift */; };
+		C0AB2AAB22DE837D00A752C6 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB2AAA22DE837D00A752C6 /* JobModel.swift */; };
+		C0E2F8F722DF8402004170D1 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2F8F622DF8402004170D1 /* RequestProtocol.swift */; };
+		C0E2F8F922DF8525004170D1 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2F8F822DF8525004170D1 /* RequestManager.swift */; };
+		C0E2F8FB22DF8C98004170D1 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */; };
+		C0E2F8FE22DFC9AB004170D1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2F8FD22DFC9AB004170D1 /* Enums.swift */; };
+		C0E2F90422E0CB04004170D1 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2F90322E0CB04004170D1 /* MockSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		36C5CD3122DE6E1300BFF1C7 /* CurriculumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurriculumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C5CD3522DE6E1300BFF1C7 /* CurriculumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumUITests.swift; sourceTree = "<group>"; };
 		36C5CD3722DE6E1300BFF1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0AB2AA822DE82FC00A752C6 /* CurriculumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumModel.swift; sourceTree = "<group>"; };
+		C0AB2AAA22DE837D00A752C6 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		C0E2F8F622DF8402004170D1 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		C0E2F8F822DF8525004170D1 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		C0E2F8FD22DFC9AB004170D1 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		C0E2F90322E0CB04004170D1 /* MockSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,10 @@
 				36C5CD1922DE6E1100BFF1C7 /* Main.storyboard */,
 				36C5CD1E22DE6E1300BFF1C7 /* LaunchScreen.storyboard */,
 				36C5CD2122DE6E1300BFF1C7 /* Info.plist */,
+				C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */,
+				C0E2F8FC22DFC96C004170D1 /* Utils */,
+				C0AB2AA722DE80AF00A752C6 /* Models */,
+				C0E2F8F522DF837E004170D1 /* Network */,
 			);
 			path = Curriculum;
 			sourceTree = "<group>";
@@ -112,6 +130,7 @@
 			children = (
 				36C5CD2A22DE6E1300BFF1C7 /* CurriculumTests.swift */,
 				36C5CD2C22DE6E1300BFF1C7 /* Info.plist */,
+				C0E2F8FF22DFD35D004170D1 /* Network */,
 			);
 			path = CurriculumTests;
 			sourceTree = "<group>";
@@ -123,6 +142,48 @@
 				36C5CD3722DE6E1300BFF1C7 /* Info.plist */,
 			);
 			path = CurriculumUITests;
+			sourceTree = "<group>";
+		};
+		C0AB2AA722DE80AF00A752C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB2AA822DE82FC00A752C6 /* CurriculumModel.swift */,
+				C0AB2AAA22DE837D00A752C6 /* JobModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0E2F8F522DF837E004170D1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2F8F622DF8402004170D1 /* RequestProtocol.swift */,
+				C0E2F8F822DF8525004170D1 /* RequestManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C0E2F8FC22DFC96C004170D1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2F8FD22DFC9AB004170D1 /* Enums.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C0E2F8FF22DFD35D004170D1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2F90022DFD3D2004170D1 /* Mock */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C0E2F90022DFD3D2004170D1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2F90322E0CB04004170D1 /* MockSession.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E2F8FB22DF8C98004170D1 /* Config.xcconfig in Resources */,
 				36C5CD2022DE6E1300BFF1C7 /* LaunchScreen.storyboard in Resources */,
 				36C5CD1D22DE6E1300BFF1C7 /* Assets.xcassets in Resources */,
 				36C5CD1B22DE6E1100BFF1C7 /* Main.storyboard in Resources */,
@@ -255,8 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AB2AA922DE82FC00A752C6 /* CurriculumModel.swift in Sources */,
+				C0AB2AAB22DE837D00A752C6 /* JobModel.swift in Sources */,
 				36C5CD1822DE6E1100BFF1C7 /* ViewController.swift in Sources */,
+				C0E2F8F922DF8525004170D1 /* RequestManager.swift in Sources */,
+				C0E2F8FE22DFC9AB004170D1 /* Enums.swift in Sources */,
 				36C5CD1622DE6E1100BFF1C7 /* AppDelegate.swift in Sources */,
+				C0E2F8F722DF8402004170D1 /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E2F90422E0CB04004170D1 /* MockSession.swift in Sources */,
 				36C5CD2B22DE6E1300BFF1C7 /* CurriculumTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +381,7 @@
 /* Begin XCBuildConfiguration section */
 		36C5CD3822DE6E1300BFF1C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -374,6 +443,7 @@
 		};
 		36C5CD3922DE6E1300BFF1C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -429,6 +499,7 @@
 		};
 		36C5CD3B22DE6E1300BFF1C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +517,7 @@
 		};
 		36C5CD3C22DE6E1300BFF1C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +535,7 @@
 		};
 		36C5CD3E22DE6E1300BFF1C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -483,6 +556,7 @@
 		};
 		36C5CD3F22DE6E1300BFF1C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +577,7 @@
 		};
 		36C5CD4122DE6E1300BFF1C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +597,7 @@
 		};
 		36C5CD4222DE6E1300BFF1C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E2F8FA22DF8C98004170D1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
