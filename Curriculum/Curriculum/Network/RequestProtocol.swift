@@ -6,3 +6,9 @@ protocol RequestProtocol {
     func requestImage(_ urlImage: String, completionHandler: @escaping (RequestResult<Data>) -> Void)
     func decodeJSONFromData<T: Decodable>(_ data: Data) -> T?
 }
+
+protocol urlSessionProtocol {
+    func dataTask(with url: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) -> URLSessionDataTask
+}
+
+extension URLSession: urlSessionProtocol {}

@@ -2,7 +2,7 @@ import Foundation
 
 final class RequestManager: RequestProtocol {
     // MARK: - Variables
-    private let session: URLSession
+    private let session: urlSessionProtocol
     private var baseURL: URL?
     
     // MARK: - Initializer
