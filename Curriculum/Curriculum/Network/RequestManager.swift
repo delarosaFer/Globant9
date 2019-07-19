@@ -31,9 +31,9 @@ final class RequestManager: RequestProtocol {
      
      - Parameters:
         - endpoint: endpoint as String.
-        - completionHandler to execute.
+        - completionHandler: completionHandler with an request result.
      */
-    func requestEndPoint(_ endpoint: String, completionHandler: @escaping (RequestResult<Data>) -> Void) {
+    internal func requestEndPoint(_ endpoint: String, completionHandler: @escaping (RequestResult<Data>) -> Void) {
         guard let url = baseURL?.appendingPathComponent(endpoint) else {
             completionHandler(.failure(APIError.invalidUrl))
             return
@@ -49,9 +49,9 @@ final class RequestManager: RequestProtocol {
      
      - Parameters:
         - urlImage: url image as String.
-        - completionHandler to execute.
+        - completionHandler: completionHandler with an request result.
      */
-    func requestImage(_ urlImage: String, completionHandler: @escaping (RequestResult<Data>) -> Void) {
+    internal func requestImage(_ urlImage: String, completionHandler: @escaping (RequestResult<Data>) -> Void) {
         guard let url = URL(string: urlImage) else {
             completionHandler(.failure(APIError.invalidUrl))
             return
@@ -66,10 +66,10 @@ final class RequestManager: RequestProtocol {
      Process the request and its response.
      
      - Parameters:
-     - url: url to request.
-     - completionHandler to execute.
+        - url: url to request.
+        - completionHandler: completionHandler with an request result.
      */
-    func request(_ url: URL, completionHandler: @escaping (RequestResult<Data>) -> Void) {
+    internal func request(_ url: URL, completionHandler: @escaping (RequestResult<Data>) -> Void) {
         let urlRequest = URLRequest(url: url)
         session.dataTask(with: urlRequest){ data, response, error in
             guard error == nil else{

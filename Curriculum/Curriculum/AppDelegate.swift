@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: Storyboard.home.rawValue, bundle: nil)
         let initialViewController = storyboard.instantiateViewController(withIdentifier: ViewController.home.rawValue) as? HomeViewController
-//        initialViewController.presenter = HomeViewController()
+        initialViewController?.presenter = HomePresenter()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = initialViewController

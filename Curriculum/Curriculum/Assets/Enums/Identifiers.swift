@@ -12,5 +12,9 @@ enum ViewController: String {
 
 // MARK: - Strings for URLS
 enum URLS: String {
-    case keyBaseURL = "BASE_URL"
+    case keyBaseURL = "BackendBaseURL"
+}
+
+enum CellIdentifier: String {
+    case Employments
 }
