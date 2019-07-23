@@ -25,6 +25,9 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         activityIndicator.hidesWhenStopped = true
         presenter?.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         presenter?.getCurriculumInfo()
     }
 }

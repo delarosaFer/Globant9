@@ -9,32 +9,39 @@ extension HomeViewController: HomeViewDelegate {
         activityIndicator.stopAnimating()
     }
     
-    func setCurriculumInfo(_ curriculum: CurriculumModel) {
+    func updateViewsInfo() {
         titleLbl.text = HomeStrings.TopTitle.rawValue
-        var projects: String?
-        if let projectsNumber = curriculum.curriculumData.numberOfProjects {
-            projects = String(projectsNumber)
+        
+        let topInfo = presenter?.getViewInfo()
+        if let projectsNumber = topInfo?.numberOfProjects {
+            projectsLbl.text = String(projectsNumber)
+        } else {
+            projectsLbl.text = ""
+            //TODO: Missing outlet to the description
         }
-        projectsLbl.text = projects
-        var releases: String?
-        if let releasesNumber = curriculum.curriculumData.numberOfReleases {
-            releases = String(releasesNumber)
+        
+        if let releasesNumber = topInfo?.numberOfReleases {
+            releasesLbl.text = String(releasesNumber)
         }
-        releasesLbl.text = releases
-        positionLbl.text = curriculum.curriculumData.position
-        cellPhoneLbl.text = curriculum.curriculumData.cellphone
-        emailLbl.text = curriculum.curriculumData.email
-        fullNameLbl.text = curriculum.curriculumData.fullName
-        aboutMeLbl.text = curriculum.curriculumData.description
+        
+        positionLbl.text = topInfo?.position
+        cellPhoneLbl.text = topInfo?.cellphone
+        emailLbl.text = topInfo?.email
+        fullNameLbl.text = topInfo?.fullName
+        aboutMeLbl.text = topInfo?.description
     }
     
     func setDownloadImageWithData(_ data: Data) {
         imageView.image = UIImage(data: data)
     }
-
     
-    func showAlert() {
-        let alert = UIAlertController(title: <#T##String?#>, message: <#T##String?#>, preferredStyle: .alert)
+    func showErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: GenericTexts.ok.rawValue.localized, style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

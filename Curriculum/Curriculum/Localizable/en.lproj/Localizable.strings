@@ -1,0 +1,5 @@
+"genericError" = "Error";
+"genericOK" = "Ok";
+"invalidUrlError" = "An error ocurred at our services. Please retry later";
+"networkError" = "A communication error ocurred. Please retry later";
+"genericErrorDescription" = "An error ocurred. Please retry later";
