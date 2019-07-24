@@ -16,6 +16,7 @@
 		36C5CD1D22DE6E1300BFF1C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CD1C22DE6E1300BFF1C7 /* Assets.xcassets */; };
 		36C5CD2B22DE6E1300BFF1C7 /* CurriculumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD2A22DE6E1300BFF1C7 /* CurriculumTests.swift */; };
 		36C5CD3622DE6E1300BFF1C7 /* CurriculumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CD3522DE6E1300BFF1C7 /* CurriculumUITests.swift */; };
+		C07CE9AB22E8B6DA004BD3A6 /* HomeViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07CE9AA22E8B6DA004BD3A6 /* HomeViewController+UITableView.swift */; };
 		C0AB2AA922DE82FC00A752C6 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB2AA822DE82FC00A752C6 /* HomeModel.swift */; };
 		C0AB2AAB22DE837D00A752C6 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB2AAA22DE837D00A752C6 /* Job.swift */; };
 		C0DC71A522E61F6D006B8C51 /* Strings+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DC71A422E61F6D006B8C51 /* Strings+Localized.swift */; };
@@ -65,6 +66,7 @@
 		36C5CD3122DE6E1300BFF1C7 /* CurriculumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurriculumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C5CD3522DE6E1300BFF1C7 /* CurriculumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumUITests.swift; sourceTree = "<group>"; };
 		36C5CD3722DE6E1300BFF1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C07CE9AA22E8B6DA004BD3A6 /* HomeViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableView.swift"; sourceTree = "<group>"; };
 		C0AB2AA822DE82FC00A752C6 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		C0AB2AAA22DE837D00A752C6 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		C0DC71A422E61F6D006B8C51 /* Strings+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Localized.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				36B9BCFC22E0CF3300F77DA2 /* HomeViewController.swift */,
+				C07CE9AA22E8B6DA004BD3A6 /* HomeViewController+UITableView.swift */,
 				C0E2F90922E11C8F004170D1 /* HomeViewController+HomeViewDelegate.swift */,
 			);
 			path = Controller;
@@ -431,6 +434,7 @@
 				36C5CD1622DE6E1100BFF1C7 /* AppDelegate.swift in Sources */,
 				C0E2F8F722DF8402004170D1 /* RequestProtocol.swift in Sources */,
 				C0E2F90C22E12D8A004170D1 /* StringKeys.swift in Sources */,
+				C07CE9AB22E8B6DA004BD3A6 /* HomeViewController+UITableView.swift in Sources */,
 				36B9BD0322E0CF8000F77DA2 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

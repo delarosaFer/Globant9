@@ -37,24 +37,23 @@ final class HomePresenter {
             guard let curriculum = curriculum else {
                 guard let error = error else {
                     DispatchQueue.main.async { [weak self] in
-                        self?.delegate?.showErrorAlert(title: AlertStrings.ErrorTitle.rawValue.localized, message: ErrorMessage.genericDescription.rawValue.localized)
+                        self?.delegate?.showErrorAlert(title: AlertStringKey.ErrorTitle.rawValue.localized, message: ErrorStringKey.GenericDescription.rawValue.localized)
                     }
                     return
                 }
                 
-                let title = AlertStrings.ErrorTitle.rawValue.localized
-                var message = ""
+                let title = AlertStringKey.ErrorTitle.rawValue.localized
+                var message = GenericString.Empty.rawValue
                 switch error {
                 case APIError.networkError:
-                    message = ErrorMessage.networkError.rawValue.localized
+                    message = ErrorStringKey.NetworkError.rawValue.localized
                 case APIError.invalidUrl:
-                    message = ErrorMessage.invalidUrl.rawValue.localized
+                    message = ErrorStringKey.InvalidUrl.rawValue.localized
                 default:
-                    message = ErrorMessage.genericDescription.rawValue.localized
+                    message = ErrorStringKey.GenericDescription.rawValue.localized
                 }
                 
                 self.delegate?.showErrorAlert(title: title, message: message)
-                debugPrint("failure")
                 return
             }
             
@@ -85,7 +84,6 @@ final class HomePresenter {
             switch requestResult {
             case .success(let data):
                 let curriculumResponse: Curriculum? = self?.client.decodeJSONFromData(data)
-                debugPrint("curriculumResponse \(String(describing: curriculumResponse))")
                 guard let curriculum = curriculumResponse else {
                     completionHandler(nil, nil)
                     return

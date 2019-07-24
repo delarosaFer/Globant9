@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        configInitialView()
         activityIndicator.hidesWhenStopped = true
         presenter?.delegate = self
     }
@@ -38,32 +39,17 @@ class HomeViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
     }
+    
+    func configInitialView() {
+        titleLbl.text = HomeStringKey.TopTitle.rawValue.localized
+        projectsLbl.text = GenericString.Empty.rawValue
+        releasesLbl.text = GenericString.Empty.rawValue
+        positionLbl.text = GenericString.Empty.rawValue
+        cellPhoneLbl.text = GenericString.Empty.rawValue
+        emailLbl.text = GenericString.Empty.rawValue
+        fullNameLbl.text = GenericString.Empty.rawValue
+        aboutMeLbl.text = GenericString.Empty.rawValue
+        imageView.backgroundColor = UIColor.white
+    }
 }
 
-// MARK: - UITable Delegate and Data Source
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter?.getSections() ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return presenter?.getRows(atSection: section) ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.Employments.rawValue) as? EmploymentsTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        guard let jobInfo = presenter?.getEmployment(atRow: indexPath.row) else {
-            return cell
-        }
-        
-        cell.configureCellWithJob(jobInfo)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-}

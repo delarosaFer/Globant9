@@ -1,19 +1,28 @@
 import Foundation
 
-enum HomeStrings: String {
-    case TopTitle = "MyCV"
+// MARK: - Keys
+enum HomeStringKey: String {
+    case TopTitle = "homeTitle"
+    case Projects = "projects"
+    case Releases = "releases"
 }
 
-enum AlertStrings: String {
+enum AlertStringKey: String {
     case ErrorTitle = "genericError"
 }
 
-enum ErrorMessage: String {
-    case invalidUrl = "invalidUrlError"
-    case networkError = "networkError"
-    case genericDescription = "genericErrorDescription"
+enum ErrorStringKey: String {
+    case InvalidUrl = "invalidUrlError"
+    case NetworkError = "networkError"
+    case GenericDescription = "genericErrorDescription"
 }
 
-enum GenericTexts: String {
-    case ok = "genericOK"
+enum GenericStringKey: String {
+    case Ok = "genericOK"
+}
+
+// MARK: - Values
+enum GenericString: String {
+    case Empty = ""
+    case Hyphen = "-"
 }

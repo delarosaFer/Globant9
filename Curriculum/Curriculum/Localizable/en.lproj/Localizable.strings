@@ -1,5 +1,12 @@
+// Generic Texts
 "genericError" = "Error";
 "genericOK" = "Ok";
+// Titles
+"homeTitle" = "My CV";
+// Errors
 "invalidUrlError" = "An error ocurred at our services. Please retry later";
 "networkError" = "A communication error ocurred. Please retry later";
 "genericErrorDescription" = "An error ocurred. Please retry later";
+//
+"projects" = "Projects";
+"releases" = "Releases";

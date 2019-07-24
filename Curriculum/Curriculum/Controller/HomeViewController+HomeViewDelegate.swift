@@ -10,18 +10,13 @@ extension HomeViewController: HomeViewDelegate {
     }
     
     func updateViewsInfo() {
-        titleLbl.text = HomeStrings.TopTitle.rawValue
-        
         let topInfo = presenter?.getTopViewInfo()
         if let projectsNumber = topInfo?.numberOfProjects {
-            projectsLbl.text = String(projectsNumber)
-        } else {
-            projectsLbl.text = ""
-            //TODO: Missing outlet to the description
+            projectsLbl.text = String(projectsNumber) + GenericString.Empty.rawValue + HomeStringKey.Projects.rawValue.localized
         }
         
         if let releasesNumber = topInfo?.numberOfReleases {
-            releasesLbl.text = String(releasesNumber)
+            releasesLbl.text = String(releasesNumber) + GenericString.Empty.rawValue + HomeStringKey.Releases.rawValue.localized
         }
         
         positionLbl.text = topInfo?.position
@@ -39,7 +34,7 @@ extension HomeViewController: HomeViewDelegate {
     
     func showErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: GenericTexts.ok.rawValue.localized, style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: GenericStringKey.Ok.rawValue.localized, style: .cancel, handler: nil)
         
         alert.addAction(okAction)
         
