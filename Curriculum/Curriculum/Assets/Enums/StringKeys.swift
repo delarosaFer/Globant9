@@ -24,5 +24,6 @@ enum GenericStringKey: String {
 // MARK: - Values
 enum GenericString: String {
     case Empty = ""
+    case Space = " "
     case Hyphen = "-"
 }

@@ -12,11 +12,11 @@ extension HomeViewController: HomeViewDelegate {
     func updateViewsInfo() {
         let topInfo = presenter?.getTopViewInfo()
         if let projectsNumber = topInfo?.numberOfProjects {
-            projectsLbl.text = String(projectsNumber) + GenericString.Empty.rawValue + HomeStringKey.Projects.rawValue.localized
+            projectsLbl.text = String(projectsNumber) + GenericString.Space.rawValue + HomeStringKey.Projects.rawValue.localized
         }
         
         if let releasesNumber = topInfo?.numberOfReleases {
-            releasesLbl.text = String(releasesNumber) + GenericString.Empty.rawValue + HomeStringKey.Releases.rawValue.localized
+            releasesLbl.text = String(releasesNumber) + GenericString.Space.rawValue + HomeStringKey.Releases.rawValue.localized
         }
         
         positionLbl.text = topInfo?.position

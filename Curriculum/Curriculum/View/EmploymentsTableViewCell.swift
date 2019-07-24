@@ -11,7 +11,7 @@ final class EmploymentsTableViewCell: UITableViewCell {
         var range: String?
         if let start = job.startDate,
         let end = job.endDate {
-            range = start + GenericString.Empty.rawValue + GenericString.Hyphen.rawValue + GenericString.Empty.rawValue + end
+            range = start + GenericString.Space.rawValue + GenericString.Hyphen.rawValue + GenericString.Space.rawValue + end
         }
         dateRangeLbl.text = range
         enterpriseNameLbl.text = job.companyName
