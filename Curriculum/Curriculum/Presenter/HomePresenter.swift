@@ -24,24 +24,8 @@ final class HomePresenter {
         self.homeModel = HomeModel()
     }
     
-    func requestCurriculumInfo(completionHandler: @escaping (Curriculum?, Error?) -> Void) {
-        client.requestEndPoint(EndPoint.curriculum.rawValue) { [weak self] requestResult in
-            DispatchQueue.main.async { [weak self] in
-                self?.delegate?.finishLoading()
-            }
-            switch requestResult {
-            case .success(let data):
-                let curriculumResponse: Curriculum? = self?.client.decodeJSONFromData(data)
-                debugPrint("curriculumResponse \(String(describing: curriculumResponse))")
-                guard let curriculum = curriculumResponse else {
-                    completionHandler(nil, nil)
-                    return
-                }
-                completionHandler(curriculum, nil)
-            case .failure(let error):
-                completionHandler(nil, error)
-            }
-        }
+    func setupData() {
+        getCurriculumInfo()
     }
     
     func getCurriculumInfo() {
@@ -93,6 +77,26 @@ final class HomePresenter {
         }
     }
     
+    func requestCurriculumInfo(completionHandler: @escaping (Curriculum?, Error?) -> Void) {
+        client.requestEndPoint(EndPoint.curriculum.rawValue) { [weak self] requestResult in
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.finishLoading()
+            }
+            switch requestResult {
+            case .success(let data):
+                let curriculumResponse: Curriculum? = self?.client.decodeJSONFromData(data)
+                debugPrint("curriculumResponse \(String(describing: curriculumResponse))")
+                guard let curriculum = curriculumResponse else {
+                    completionHandler(nil, nil)
+                    return
+                }
+                completionHandler(curriculum, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
+    
     func getImageData(urlStr: String, completion: @escaping (Data?) -> Void) {
         client.requestImage(urlStr) { requestResult in
             switch requestResult {
@@ -108,13 +112,35 @@ final class HomePresenter {
     
     func setCurriculum(_ curriculum: Curriculum) {
         self.homeModel?.curriculum = curriculum
+        if let rows = curriculum.jobList?.count {
+            self.homeModel?.rowsPerSection = [Int]()
+            self.homeModel?.rowsPerSection?.append(rows)
+        }
     }
     
-    func getViewInfo() -> Curriculum? {
+    func getTopViewInfo() -> Curriculum? {
         return self.homeModel?.curriculum
     }
     
-    func setupData() {
-        getCurriculumInfo()
+    func getSections() -> Int {
+        return 1
+    }
+    
+    func getRows(atSection section: Int) -> Int {
+        guard let rows = self.homeModel?.rowsPerSection,
+            rows.count > section else {
+                return 0
+        }
+        
+        return rows[section]
+    }
+    
+    func getEmployment(atRow row: Int) -> Job? {
+        guard let jobs = self.homeModel?.curriculum?.jobList,
+            jobs.count > row else {
+                return nil
+        }
+        
+        return jobs[row]
     }
 }

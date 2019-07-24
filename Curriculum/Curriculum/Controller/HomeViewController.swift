@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
+        configTableView()
         activityIndicator.hidesWhenStopped = true
         presenter?.delegate = self
     }
@@ -30,22 +30,40 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         presenter?.getCurriculumInfo()
     }
+    
+    func configTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib.init(nibName: CellNibName.Employments.rawValue, bundle: nil), forCellReuseIdentifier: CellIdentifier.Employments.rawValue)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
+    }
 }
 
 // MARK: - UITable Delegate and Data Source
-extension HomeViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter?.getSections() ?? 0
+    }
     
-}
-
-extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 1
+       return presenter?.getRows(atSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: CellIdentifier.Employments.rawValue)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.Employments.rawValue) as? EmploymentsTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        guard let jobInfo = presenter?.getEmployment(atRow: indexPath.row) else {
+            return cell
+        }
+        
+        cell.configureCellWithJob(jobInfo)
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }

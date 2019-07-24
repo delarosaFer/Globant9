@@ -5,7 +5,7 @@ enum Storyboard: String {
     case home = "Home"
 }
 
-// MARK: - View controller isdentifiers
+// MARK: - View controller identifiers
 enum ViewController: String {
     case home = "HomeViewController"
 }
@@ -15,6 +15,11 @@ enum URLS: String {
     case keyBaseURL = "BackendBaseURL"
 }
 
+// MARK: - Cell identifiers
 enum CellIdentifier: String {
-    case Employments
+    case Employments = "employmentCellId"
+}
+
+enum CellNibName: String {
+    case Employments = "EmploymentsTableViewCell"
 }

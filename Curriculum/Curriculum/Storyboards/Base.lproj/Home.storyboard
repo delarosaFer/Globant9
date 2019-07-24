@@ -159,6 +159,10 @@
                                 <rect key="frame" x="0.0" y="274" width="320" height="294"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Nq-qh-QNT" id="C11-xT-8Cw"/>
+                                    <outlet property="delegate" destination="6Nq-qh-QNT" id="aPs-TM-nhr"/>
+                                </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cBZ-wn-qWb">
                                 <rect key="frame" x="145" y="269" width="30" height="30"/>

@@ -12,7 +12,7 @@ extension HomeViewController: HomeViewDelegate {
     func updateViewsInfo() {
         titleLbl.text = HomeStrings.TopTitle.rawValue
         
-        let topInfo = presenter?.getViewInfo()
+        let topInfo = presenter?.getTopViewInfo()
         if let projectsNumber = topInfo?.numberOfProjects {
             projectsLbl.text = String(projectsNumber)
         } else {
@@ -29,6 +29,8 @@ extension HomeViewController: HomeViewDelegate {
         emailLbl.text = topInfo?.email
         fullNameLbl.text = topInfo?.fullName
         aboutMeLbl.text = topInfo?.description
+        
+        tableView.reloadData()
     }
     
     func setDownloadImageWithData(_ data: Data) {
