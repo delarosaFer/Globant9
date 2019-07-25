@@ -12,7 +12,7 @@ final class RequestManager: RequestProtocol {
      - Parameters:
         - session: URLSession object.
      */
-    init(session: URLSession = URLSession.shared) {
+    init(session: urlSessionProtocol = URLSession.shared) {
         self.session = session
         guard let baseURL = AppConfiguration.informationForKey(URLS.keyBaseURL.rawValue) else {
             return

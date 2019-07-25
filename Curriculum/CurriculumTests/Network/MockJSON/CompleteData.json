@@ -1,0 +1,31 @@
+{
+    "fullName": "Globant 9",
+    "numberOfProjects": 7,
+    "numberOfReleases": null,
+    "position": "iOS Developer",
+    "description": "Here I've worked on several projects. From creation to the release of the product",
+    "cellphone": "+52 1 (55) 0000 0000",
+    "email": "globant9@globant.com",
+    "website": "https://www.linkedin.com",
+    "photoURL": "https://i.ibb.co/XYPhmtJ/Screen-Shot-2019-06-19-at-4-02-24-PM.png",
+    "jobList": [
+        {
+            "companyName": "Globant",
+            "startDate": "December 2017",
+            "endDate": "Present",
+            "description": "I worked in bank projects as i0S tech leader. I was responsible of a couple of migrations from Objective C to Swift. All the projects implemented the best practices. The apps were created under development architectures and using the latest features of the language: Swift. I was working on site mostly of the time but also remotely and few times was necessary to visit the clients offices located in other countries such as United States, Spacin and India."
+        },
+        {
+            "companyName": "Softek",
+            "startDate": "February 2014",
+            "endDate": "December 2017",
+            "description": "I worked in several projects. I was responsible of the apps creation and release. I developed apps for the iPhone and iPad devices."
+        },
+        {
+            "companyName": "TV Azteca",
+            "startDate": "July 2017",
+            "endDate": "December 2017",
+            "description": "I worked in entertainment projects. I was responsible of the apps creation and release. I developed an app for the iPhone."
+        }
+    ]
+}

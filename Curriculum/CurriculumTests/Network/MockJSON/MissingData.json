@@ -1,0 +1,26 @@
+{
+    "fullName": "Globant 9",
+    "numberOfReleases": 4,
+    "position": "iOS Developer",
+    "cellphone": "+52 1 (55) 0000 0000",
+    "photoURL": "",
+    "jobList": [
+        {
+            "companyName": "Globant",
+            "startDate": "December 2017",
+            "endDate": "Present",
+            "description": "I worked in bank projects as i0S tech leader. I was responsible of a couple of migrations from Objective C to Swift. All the projects implemented the best practices. The apps were created under development architectures and using the latest features of the language: Swift. I was working on site mostly of the time but also remotely and few times was necessary to visit the clients offices located in other countries such as United States, Spacin and India."
+        },
+        {
+            "companyName": "Softek",
+            "startDate": "February 2014",
+            "endDate": "December 2017",
+            "description": "I worked in several projects. I was responsible of the apps creation and release. I developed apps for the iPhone and iPad devices."
+        },
+        {
+            "startDate": "July 2017",
+            "endDate": "December 2017",
+            "description": "I worked as freelance developing several projects."
+        }
+    ]
+}
