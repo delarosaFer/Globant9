@@ -24,6 +24,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         configTableView()
         configInitialView()
+        configAccessibilityIdentifiers()
         activityIndicator.hidesWhenStopped = true
         presenter?.delegate = self
     }
@@ -50,6 +51,12 @@ final class HomeViewController: UIViewController {
         fullNameLbl.text = GenericString.Empty.rawValue
         aboutMeLbl.text = GenericString.Empty.rawValue
         imageView.backgroundColor = UIColor.white
+    }
+    
+    func configAccessibilityIdentifiers() {
+        fullNameLbl.accessibilityIdentifier = AccessibilityIdentifiers.fullNameLbl.rawValue
+        positionLbl.accessibilityIdentifier = AccessibilityIdentifiers.positionLbl.rawValue
+        cellPhoneLbl.accessibilityIdentifier = AccessibilityIdentifiers.cellPhoneLbl.rawValue
     }
 }
 

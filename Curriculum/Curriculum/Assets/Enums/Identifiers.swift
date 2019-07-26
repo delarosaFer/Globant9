@@ -23,3 +23,10 @@ enum CellIdentifier: String {
 enum CellNibName: String {
     case Employments = "EmploymentsTableViewCell"
 }
+
+// MARK: - Accessibility identifiers
+enum AccessibilityIdentifiers: String {
+    case fullNameLbl = "fullNameLbl"
+    case positionLbl = "positionLbl"
+    case cellPhoneLbl = "cellPhoneLbl"
+}
