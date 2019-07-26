@@ -8,7 +8,7 @@ class ClientTests: XCTestCase {
         mockSession.data = nil
         mockSession.response = nil
         mockSession.error = APIError.networkError
-        let promise = expectation(description: "Completion handler invoked")
+        let promise = expectation(description: ExpectationDescription.CompletionInvoked.rawValue)
         var failed = false
         let sut = RequestManager(session: mockSession)
         sut.requestEndPoint(EndPoint.curriculum.rawValue) { result in
@@ -16,10 +16,8 @@ class ClientTests: XCTestCase {
             switch result {
             case .success( _):
                 failed = false
-            debugPrint("success)")
                 promise.fulfill()
             case .failure(let error):
-                debugPrint("error \(error)")
                 guard let apiError = error as? APIError,
                     apiError == APIError.networkError else {
                     failed = false
@@ -38,7 +36,7 @@ class ClientTests: XCTestCase {
         let mockSession = MockSession()
         mockSession.data = nil
         mockSession.response = nil
-        let promise = expectation(description: "Completion handler invoked")
+        let promise = expectation(description: ExpectationDescription.CompletionInvoked.rawValue)
         var failed = false
         let sut = RequestManager(session: mockSession)
         sut.requestEndPoint(EndPoint.invalidEndPoint.rawValue) { result in
@@ -59,14 +57,14 @@ class ClientTests: XCTestCase {
         let mockSession = MockSession()
         mockSession.data =  MockDataResponse().getResponseData(responseType: DataResponseType.CompleteData)
         mockSession.response = HTTPURLResponse(url: URL(fileURLWithPath: MockURL.BaseURL.rawValue), statusCode: 200, httpVersion: nil, headerFields: nil)
-        let promise = expectation(description: "Success response")
+        let promise = expectation(description: ExpectationDescription.SuccessResponse.rawValue)
         let sut = RequestManager(session: mockSession)
         sut.requestEndPoint(EndPoint.curriculum.rawValue) { result in
             switch result {
             case .success( _):
                 promise.fulfill()
             case .failure( _):
-                XCTFail(NSLocalizedString("notConnectionMessage", comment: "Not connnection"))
+                XCTFail(FailureDescription.ConnectionFailed.rawValue)
                 promise.fulfill()
             }
         }
@@ -78,7 +76,7 @@ class ClientTests: XCTestCase {
         let mockData = MockDataResponse().getResponseData(responseType: .CompleteData)
         let sut = RequestManager()
         guard let data = mockData else {
-            XCTFail("Couldn't retrieve data from the local JSON")
+            XCTFail(FailureDescription.LocalJSONFailed.rawValue)
             return
         }
         let responseParsed: Curriculum? = sut.decodeJSONFromData(data)
@@ -89,7 +87,7 @@ class ClientTests: XCTestCase {
         let mockData = MockDataResponse().getResponseData(responseType: .WrongFormat)
         let sut = RequestManager()
         guard let data = mockData else {
-            XCTFail("Couldn't retrieve data from the local JSON")
+            XCTFail(FailureDescription.LocalJSONFailed.rawValue)
             return
         }
         let responseParsed: Curriculum? = sut.decodeJSONFromData(data)
