@@ -6,3 +6,7 @@ enum MockURL: String {
     case ProfilePhotoURL = "https://i.ibb.co/XYPhmtJ/Screen-Shot-2019-06-19-at-4-02-24-PM.png"
 }
 
+// MARK: - Values
+enum GenericStringTest: String {
+    case Empty = ""
+}

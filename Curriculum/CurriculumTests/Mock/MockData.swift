@@ -1,7 +1,7 @@
 import Foundation
 @testable import Curriculum
 
-class MockData {
+class MockDataResponse {
     func getResponseData(responseType: DataResponseType) -> Data? {
         let bundle = Bundle(for: type(of: self))
         

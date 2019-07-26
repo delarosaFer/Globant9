@@ -1,6 +1,6 @@
 import Foundation
 
-protocol HomeViewDelegate: NSObjectProtocol {
+protocol HomeViewDelegate: class {
     func startLoading()
     func finishLoading()
     func updateViewsInfo()

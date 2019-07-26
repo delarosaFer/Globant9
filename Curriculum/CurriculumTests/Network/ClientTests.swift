@@ -57,7 +57,7 @@ class ClientTests: XCTestCase {
     
     func testSuccessResponse() {
         let mockSession = MockSession()
-        mockSession.data =  MockData().getResponseData(responseType: DataResponseType.CompleteData)
+        mockSession.data =  MockDataResponse().getResponseData(responseType: DataResponseType.CompleteData)
         mockSession.response = HTTPURLResponse(url: URL(fileURLWithPath: MockURL.BaseURL.rawValue), statusCode: 200, httpVersion: nil, headerFields: nil)
         let promise = expectation(description: "Success response")
         let sut = RequestManager(session: mockSession)
@@ -75,7 +75,7 @@ class ClientTests: XCTestCase {
     
     // MARK: - Decode
     func testDecodeValidJSON() {
-        let mockData = MockData().getResponseData(responseType: .CompleteData)
+        let mockData = MockDataResponse().getResponseData(responseType: .CompleteData)
         let sut = RequestManager()
         guard let data = mockData else {
             XCTFail("Couldn't retrieve data from the local JSON")
@@ -86,7 +86,7 @@ class ClientTests: XCTestCase {
     }
     
     func testDecodeInvalidJSON() {
-        let mockData = MockData().getResponseData(responseType: .WrongFormat)
+        let mockData = MockDataResponse().getResponseData(responseType: .WrongFormat)
         let sut = RequestManager()
         guard let data = mockData else {
             XCTFail("Couldn't retrieve data from the local JSON")
