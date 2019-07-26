@@ -1,7 +1,7 @@
 import XCTest
 @testable import Curriculum
 
-class HomeModelTest {
+class HomeModelTest: XCTestCase {
     func testInformation() {
         guard let mockData = MockDataResponse().getResponseData(responseType: DataResponseType.CompleteData) else {
             XCTFail()
