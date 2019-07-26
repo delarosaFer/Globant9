@@ -120,6 +120,10 @@ final class HomePresenter {
         return self.homeModel?.curriculum
     }
     
+    func getWebInfo() -> String? {
+        return self.homeModel?.curriculum?.website
+    }
+    
     func getSections() -> Int {
         return 1
     }

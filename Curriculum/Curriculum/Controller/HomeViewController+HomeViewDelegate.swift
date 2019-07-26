@@ -24,7 +24,13 @@ extension HomeViewController: HomeViewDelegate {
         emailLbl.text = topInfo?.email
         fullNameLbl.text = topInfo?.fullName
         aboutMeLbl.text = topInfo?.description
-        
+        if let web = topInfo?.website {
+            webSiteBtn.isHidden = false
+            webSiteBtn.setTitle(web, for: .normal)
+        } else {
+            webSiteBtn.removeFromSuperview()
+            self.view.layoutIfNeeded()
+        }
         tableView.reloadData()
     }
     

@@ -51,12 +51,22 @@ final class HomeViewController: UIViewController {
         fullNameLbl.text = GenericString.Empty.rawValue
         aboutMeLbl.text = GenericString.Empty.rawValue
         imageView.backgroundColor = UIColor.white
+        webSiteBtn.titleLabel?.text = GenericString.Empty.rawValue
     }
     
     func configAccessibilityIdentifiers() {
         fullNameLbl.accessibilityIdentifier = AccessibilityIdentifiers.fullNameLbl.rawValue
         positionLbl.accessibilityIdentifier = AccessibilityIdentifiers.positionLbl.rawValue
         cellPhoneLbl.accessibilityIdentifier = AccessibilityIdentifiers.cellPhoneLbl.rawValue
+    }
+    
+    // MARK: - IBActions
+    @IBAction func didPressOpenWeb(_ sender: Any) {
+        guard let web = presenter?.getWebInfo(),
+            let url = URL(string: web) else {
+                return
+        }
+        UIApplication.shared.open(url)
     }
 }
 
