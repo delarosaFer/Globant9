@@ -1,5 +1,6 @@
 import UIKit
 
+/// Controller for the main View.
 final class HomeViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!

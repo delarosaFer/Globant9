@@ -1,5 +1,6 @@
 # Curriculum
-=============
+------
+
 ### Description
 This app displays the curriculum information.
 

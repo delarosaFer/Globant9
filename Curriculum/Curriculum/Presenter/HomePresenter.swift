@@ -1,13 +1,24 @@
 import Foundation
 
+/// Methods that will be implemented in the home view.
 protocol HomeViewDelegate: class {
+    /// Start the animation of the activity indicator.
     func startLoading()
+    /// Finish the animation of the activity indicator.
     func finishLoading()
+    /// The views needs to be updated.
     func updateViewsInfo()
+    /// Pass the content of the UIImage.
     func setDownloadImageWithData(_ data: Data)
+    /// Display the error alert.
     func showErrorAlert(title: String, message: String)
 }
 
+/**
+ The presenter that implements the logic.
+ Responds to user actions and updates the UI (through delegation).
+ Not UIKit dependent.
+ */
 final class HomePresenter {
     
     // MARK: - Variables

@@ -26,13 +26,6 @@ final class RequestManager: RequestProtocol {
     }
     
     // MARK: - Methods
-    /**
-     Executes the request for a given endpoint.
-     
-     - Parameters:
-        - endpoint: endpoint as String.
-        - completionHandler: completionHandler with an request result.
-     */
     internal func requestEndPoint(_ endpoint: String, completionHandler: @escaping (RequestResult<Data>) -> Void) {
         guard let url = baseURL?.appendingPathComponent(endpoint) else {
             completionHandler(.failure(APIError.invalidUrl))
@@ -44,13 +37,6 @@ final class RequestManager: RequestProtocol {
         }
     }
     
-    /**
-     Executes the request for a url image.
-     
-     - Parameters:
-        - urlImage: url image as String.
-        - completionHandler: completionHandler with an request result.
-     */
     internal func requestImage(_ urlImage: String, completionHandler: @escaping (RequestResult<Data>) -> Void) {
         guard let url = URL(string: urlImage) else {
             completionHandler(.failure(APIError.invalidUrl))
@@ -62,13 +48,6 @@ final class RequestManager: RequestProtocol {
         }
     }
     
-    /**
-     Process the request and its response.
-     
-     - Parameters:
-        - url: url to request.
-        - completionHandler: completionHandler with an request result.
-     */
     internal func request(_ url: URL, completionHandler: @escaping (RequestResult<Data>) -> Void) {
         let urlRequest = URLRequest(url: url)
         session.dataTask(with: urlRequest){ data, response, error in
@@ -86,13 +65,6 @@ final class RequestManager: RequestProtocol {
             }.resume()
     }
     
-    /**
-     Decodes the data received as response and returns an generic type.
-     
-     - Parameters:
-        - data: Data received as response.
-     - Returns: A generic tye or nil if the data is not a valid JSON.
-     */
     func decodeJSONFromData<T: Decodable>(_ data: Data) -> T? {
         let jsonDecoder = JSONDecoder()
         do {
