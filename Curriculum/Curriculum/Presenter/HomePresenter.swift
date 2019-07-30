@@ -35,10 +35,6 @@ final class HomePresenter {
         self.homeModel = HomeModel()
     }
     
-    func setupData() {
-        getCurriculumInfo()
-    }
-    
     func getCurriculumInfo() {
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.startLoading()

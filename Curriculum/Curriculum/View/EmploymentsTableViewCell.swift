@@ -2,9 +2,9 @@ import UIKit
 
 final class EmploymentsTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
-    @IBOutlet weak var dateRangeLbl: UILabel!
-    @IBOutlet weak var enterpriseNameLbl: UILabel!
-    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet fileprivate weak var dateRangeLbl: UILabel!
+    @IBOutlet fileprivate weak var enterpriseNameLbl: UILabel!
+    @IBOutlet fileprivate weak var descriptionLbl: UILabel!
     
     // MARK: - Methods
     func configureCellWithJob(_ job: Job) {

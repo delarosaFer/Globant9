@@ -4,7 +4,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet fileprivate weak var titleLbl: UILabel!
     @IBOutlet weak var projectsLbl: UILabel!
     @IBOutlet weak var releasesLbl: UILabel!
     @IBOutlet weak var positionLbl: UILabel!
@@ -34,7 +34,7 @@ final class HomeViewController: UIViewController {
         presenter?.getCurriculumInfo()
     }
     
-    func configTableView() {
+    fileprivate func configTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib.init(nibName: CellNibName.Employments.rawValue, bundle: nil), forCellReuseIdentifier: CellIdentifier.Employments.rawValue)
@@ -42,7 +42,7 @@ final class HomeViewController: UIViewController {
         tableView.estimatedRowHeight = 200
     }
     
-    func configInitialView() {
+    fileprivate func configInitialView() {
         titleLbl.text = HomeStringKey.TopTitle.rawValue.localized
         projectsLbl.text = GenericString.Empty.rawValue
         releasesLbl.text = GenericString.Empty.rawValue
@@ -55,7 +55,7 @@ final class HomeViewController: UIViewController {
         webSiteBtn.titleLabel?.text = GenericString.Empty.rawValue
     }
     
-    func configAccessibilityIdentifiers() {
+    fileprivate func configAccessibilityIdentifiers() {
         fullNameLbl.accessibilityIdentifier = AccessibilityIdentifiers.fullNameLbl.rawValue
         positionLbl.accessibilityIdentifier = AccessibilityIdentifiers.positionLbl.rawValue
         cellPhoneLbl.accessibilityIdentifier = AccessibilityIdentifiers.cellPhoneLbl.rawValue
